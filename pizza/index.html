@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    color: #1c1818;
+    background-color: antiquewhite;
+}
+
+fieldset {
+    border: none;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.pizza-size {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.pizza-size label {
+    margin-right: 10px;
+}
+
+.toppings {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.topping {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#receipt {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+#pizza-image {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+#pizza-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100
+}
+
+
+</style>
+<body>
+    <h1>Pizza Order</h1>
+    <form id="pizza-form">
+        <fieldset>
+            <legend>Pizza Size</legend>
+            <div class="pizza-size">
+                <input type="radio" id="small" name="size" value="8" checked>
+                <label for="small">Small ($8)</label>
+            </div>
+            <div class="pizza-size">
+                <input type="radio" id="medium" name="size" value="12">
+                <label for="medium">Medium ($12)</label>
+            </div>
+            <div class="pizza-size">
+                <input type="radio" id="large" name="size" value="15">
+                <label for="large">Large ($15)</label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Toppings</legend>
+            <div class="toppings">
+                <div class="topping">
+                    <input type="checkbox" id="pepperoni" name="toppings" value="1">
+                    <label for="pepperoni">Pepperoni ($1)</label>
+                    <img src="pepperoni.jpg" alt="Pepperoni" class="topps" width="50px">
+                </div>
+                <div class="topping">
+                    <input type="checkbox" id="mushrooms" name="toppings" value="1">
+                    <label for="mushrooms">Mushrooms ($1)</label>
+                    <img src="mushrooms.jpg" alt="Mushrooms" class="topps" width="50px">
+                </div>
+                <div class="topping">
+                    <input type="checkbox" id="onions" name="toppings" value="1">
+                    <label for="onions">Onions ($1)</label>
+                    <img src="onion.jpg" alt="Onions" class="topps" width="50px">
+                </div>
+                <div class="topping">
+                    <input type="checkbox" id="olives" name="toppings" value="1">
+                    <label for="olives">Olives ($1)</label>
+                    <img src="olives.jpg" alt="Olives" class="topps" width="50px">
+                </div>
+            </div>
+        </fieldset>
+        <button type="button" id="calculate">Calculate Price</button>
+        <button type="reset">Reset Form</button>
+    </form>
+    <div id="receipt"></div>
+    <div id="pizza-image">
+        <img src="pizza.jpg" alt="Pizza base">
+    </div>
+    <script src="pizza.js"></script>
+</body>
+</html>
